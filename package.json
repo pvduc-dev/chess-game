@@ -1,0 +1,19 @@
+{
+  "name": "chess-game",
+  "version": "1.0.0",
+  "author": "Pv Duc",
+  "private": true,
+  "license": "UNLICENSE",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "yarn workspaces run dev",
+    "dev:client": "yarn workspace @chess-game/client dev",
+    "build:client": "yarn workspace @chess-game/client build",
+    "build:server": "yarn workspace @chess-game/client build",
+    "build": "yarn build:server",
+    "postbuild": "rimraf server/static && yarn build:server"
+  }
+}
